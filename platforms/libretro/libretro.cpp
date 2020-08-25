@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Gearboy - Nintendo Game Boy Emulator
  * Copyright (C) 2012  Ignacio Sanchez
  * Copyright (C) 2017  Andrés Suárez
@@ -65,9 +65,9 @@ GearboyCore* core;
 static retro_environment_t environ_cb;
 
 static const struct retro_variable vars[] = {
-    { "gearboy_model", "Emulated Model (restart); Auto|Game Boy DMG" },
-    { "gearboy_palette", "Palette; Original|Sharp|B/W|Autumn|Soft|Slime" },
-    { "gearboy_up_down_allowed", "Allow Up+Down / Left+Right; Disabled|Enabled" },
+    { "gearboy_model", "模拟型号（须重启）; 自动|Game Boy DMG" },
+    { "gearboy_palette", "调色板; 原始|锐利|黑白|Autumn|柔和|Slime" },
+    { "gearboy_up_down_allowed", "允许上+下/左+右; Disabled|Enabled" },
 
     { NULL }
 };
@@ -273,15 +273,15 @@ static void check_variables(void)
 
     if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
     {
-        if (strcmp(var.value, "Original") == 0)
+        if (strcmp(var.value, "原始") == 0)
             current_palette = original_palette;
-        else if (strcmp(var.value, "Sharp") == 0)
+        else if (strcmp(var.value, "锐利") == 0)
             current_palette = sharp_palette;
-        else if (strcmp(var.value, "B/W") == 0)
+        else if (strcmp(var.value, "黑白") == 0)
             current_palette = bw_palette;
         else if (strcmp(var.value, "Autumn") == 0)
             current_palette = autumn_palette;
-        else if (strcmp(var.value, "Soft") == 0)
+        else if (strcmp(var.value, "柔和") == 0)
             current_palette = soft_palette;
         else if (strcmp(var.value, "Slime") == 0)
             current_palette = slime_palette;
